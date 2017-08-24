@@ -9,7 +9,22 @@ html, body {
 }
 
 #container {
+  margin-top: 150px;
+}
 
+#row {
+  text-align: center;
+}
+
+#break-container, #session-container {
+  display: inline-block;
+  width: 100px;
+  margin: 0px 30px 40px 30px;
+}
+
+.num {
+  display: inline-block;
+  margin: 5px 5px;
 }
 
 #circle {
@@ -18,7 +33,7 @@ html, body {
   border-radius: 50%;
   border: red solid 2px;
   background-color: transparent;
-  margin: 250px auto;
+  margin: auto;
   position: relative;
 }
 

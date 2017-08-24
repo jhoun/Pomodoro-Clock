@@ -1,4 +1,7 @@
 $(document).ready(function() {
+  $(".btn").click(function(e){
+    console.log('e: ', e);
+  })
   function startTimer(duration){
     var timer = duration;
     var minutes;
@@ -17,6 +20,7 @@ $(document).ready(function() {
       }
     }, 1000)
   }
+
 
   startTimer(3)
 });
