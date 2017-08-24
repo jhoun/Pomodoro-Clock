@@ -1,6 +1,7 @@
 $(document).ready(function() {
   var clicked = null;
   var isRunning = true;
+  var add;
   //when button is pressed
   $(".btn").click(function(e){
     var initialNumberBreak = parseFloat($("#number-break").text());
@@ -9,29 +10,34 @@ $(document).ready(function() {
 
     if (id === "subtract-break" && initialNumberBreak >= 2){
       initialNumberBreak--;
+      clicked = null;
     }
     if (id === "add-break"){
       initialNumberBreak++;
+      clicked = null;
     }
     $("#number-break").text(initialNumberBreak);
 
     if (id === "subtract-session" && initialNumberSession >= 2){
       initialNumberSession--;
+      clicked = null;
     }
     if (id === "add-session"){
       initialNumberSession++;
+      clicked = null;
     }
 
     $("#number-session").text(initialNumberSession);
     $("#countdown").text(initialNumberSession + ":00");
   })
 
+    // countdown timer
     function startTimer(duration){
     var timer = duration;
     var minutes;
     var seconds;
 
-    setInterval(function(){
+    add = setInterval(function(){
       if (isRunning) {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
@@ -52,6 +58,8 @@ $(document).ready(function() {
 
     var currentNumber = parseFloat($("#countdown").text().slice(0, -3)) * 60;
     if (clicked === null){
+      isRunning = true;
+      clearInterval(add);
       startTimer(currentNumber);
       clicked = true
     } else if (clicked) {
