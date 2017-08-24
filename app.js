@@ -1,6 +1,14 @@
 $(document).ready(function() {
   $(".btn").click(function(e){
-    console.log('e: ', e);
+    var initialNumber = parseInt($("#number-break").text());
+    var id = e.currentTarget.id;
+    if (id === "subtract-break" && initialNumber >= 2){
+      initialNumber--;
+    }
+    if (id === "add-break"){
+      initialNumber++;
+    }
+    $("#number-break").text(initialNumber);
   })
   function startTimer(duration){
     var timer = duration;

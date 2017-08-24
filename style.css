@@ -22,7 +22,7 @@ html, body {
   margin: 0px 30px 40px 30px;
 }
 
-.num {
+.inline {
   display: inline-block;
   margin: 5px 5px;
 }
@@ -32,7 +32,6 @@ html, body {
   height: 200px;
   border-radius: 50%;
   border: red solid 2px;
-  background-color: transparent;
   margin: auto;
   position: relative;
 }
